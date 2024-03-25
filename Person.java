@@ -2,22 +2,23 @@ public class Person {
     private String name;
     private String surname;
     private int age;
-    private double many;
+    private String email;
+    private String password;
 
-    public Person(String name, String surname, int age, double many) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.many = many;
+    protected Person(PersonBuilder builder){
+        this.name = builder.getName();
+        this.age = builder.getAge();
+        this.surname = builder.getSurname();
+        this.email = builder.getEmail();
+        this.password = builder.getPassword();
+    }
+    public static PersonBuilder builder(String email , String password){
+        return new PersonBuilder(email,password);
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", many=" + many +
-                '}';
+        return "Person{" + "name='" + name + '\'' + ", surname='" + surname + '\'' + ", age=" + age + ", email='" + email + '\'' + ", password='" + password + '\'' + '}';
     }
 }
+

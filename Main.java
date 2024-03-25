@@ -1,20 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        CreatePerson firstGenericPerson = new CreatePerson();
-
-        firstGenericPerson.setPersonName("Sergio");
-        firstGenericPerson.setPersonSurname("Hanganu");
-        firstGenericPerson.setPersonAge(22);
-        firstGenericPerson.setPersonMany(32);
-
-        Person sergio = firstGenericPerson.createAnHuman();
-
-        System.out.println(sergio);
-
-        Person secondGenericPerson = new Person(
-                "Giovanni", "Rossi", 45, 99
-        );
-
-        System.out.println(secondGenericPerson);
+Person genericUser = Person.builder("generic.user@gmail.com", "CoMpLiCaTeDpassWORD").build();
+System.out.println(genericUser);
+Person spesificUser = Person.builder("myMail@Outlook.com","W_as-fds124_pass").setName("Me").setAge(97).setSurname("YouKnow").build();
+System.out.println(spesificUser);
     }
 }
