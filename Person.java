@@ -1,24 +1,23 @@
 public class Person {
-    private String name;
-    private String surname;
+    private String firstName;
+    private String lastName;
     private int age;
-    private String email;
-    private String password;
+    private String address;
 
-    protected Person(PersonBuilder builder){
-        this.name = builder.getName();
+    protected Person(PersonBuilder builder) {
+        this.firstName = builder.getName();
         this.age = builder.getAge();
-        this.surname = builder.getSurname();
-        this.email = builder.getEmail();
-        this.password = builder.getPassword();
+        this.lastName = builder.getSurname();
+        this.address = builder.getEmail();
     }
-    public static PersonBuilder builder(String email , String password){
-        return new PersonBuilder(email,password);
+
+    public static PersonBuilder builder(String firstName, String surname) {
+        return new PersonBuilder(firstName, surname);
     }
 
     @Override
     public String toString() {
-        return "Person{" + "name='" + name + '\'' + ", surname='" + surname + '\'' + ", age=" + age + ", email='" + email + '\'' + ", password='" + password + '\'' + '}';
+        return "Person{" + "name='" + firstName + '\'' + ", surname='" + lastName + '\'' + ", age=" + age + ", email='" + address + '\'' + '}';
     }
 }
 

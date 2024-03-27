@@ -2,22 +2,11 @@ class PersonBuilder {
     private String name;
     private String surname;
     private int age;
-    private String email;
-    private String password;
+    private String address;
 
-    public PersonBuilder(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
-
-    public PersonBuilder setName(String name) {
+    public PersonBuilder(String name, String surname) {
         this.name = name;
-        return this;
-    }
-
-    public PersonBuilder setSurname(String surname) {
         this.surname = surname;
-        return this;
     }
 
     public PersonBuilder setAge(int age) {
@@ -25,27 +14,22 @@ class PersonBuilder {
         return this;
     }
 
-    public PersonBuilder setEmail(String email) {
-        this.email = email;
+    public PersonBuilder setAdress(String email) {
+        this.address = email;
         return this;
     }
 
-    public PersonBuilder setPassword(String password) {
-        this.password = password;
-        return this;
-    }
-    public Person build(){
+    public Person build() {
         return new Person(this);
     }
 
     @Override
     public String toString() {
         return "PersonBuilder{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", age=" + age +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                "name ='" + name + '\'' +
+                ", surname ='" + surname + '\'' +
+                ", age =" + age +
+                ", address ='" + address + '\'' +
                 '}';
     }
 
@@ -62,10 +46,6 @@ class PersonBuilder {
     }
 
     public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
+        return address;
     }
 }
